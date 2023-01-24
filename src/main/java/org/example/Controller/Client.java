@@ -1,42 +1,47 @@
 package org.example.Controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
 
     static Socket client;
-    static PrintWriter out;
-    static BufferedReader in;
+    static DataOutputStream out;
+    static DataInputStream in;
+    static String response = "";
     static Scanner sc = new Scanner(System.in);
     public static void start(String ip, int port) {
-        System.out.println("Cliente encendido.\nConectando con el servidor.");
         try {
+            System.out.println("Cliente encendido.\nConectando con el servidor.");
             client = new Socket(ip, port);
-            out = new PrintWriter(client.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+            out = new DataOutputStream(client.getOutputStream());
+            in = new DataInputStream(client.getInputStream());
+            do {
+                send();
+            } while (!response.equals("salir"));
+            stop();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
-    public static String send() {
-        String response = "";
+    public static void send() {
         String text = "";
         try {
             System.out.println("Introduce un mensaje: ");
             text = sc.nextLine();
             System.out.println("Enviando mensaje.");
-            out.println(text);
-            response = in.readLine();
+            out.writeUTF(text);
+            System.out.println(in.readUTF());
+            text = sc.nextLine();
+            out.writeUTF(text);
+            System.out.println(in.readUTF());
+            text = sc.nextLine();
+            out.writeUTF(text);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
-            response = "Error, no hubo mensaje.";
+            throw new RuntimeException(e);
         }
-        return response;
+        response = text;
     }
     public static void stop() {
         try {
@@ -49,6 +54,6 @@ public class Client {
         }
     }
     public static void main(String[] args) {
-        start("localhost",4900);
+        start("127.0.0.1",6900);
     }
 }
