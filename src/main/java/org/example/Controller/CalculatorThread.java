@@ -6,10 +6,14 @@ import java.io.IOException;
 import java.io.DataOutputStream;
 import java.net.Socket;
 
-public class CalculatorThread extends Thread{
+public class CalculatorThread extends Thread {
     private DataOutputStream out;
     private DataInputStream in;
     private Socket client;
+    private double n1, n2;
+    private boolean error = false;
+    private final String errorS = "Ha habido algún problema con los datos introducidos";
+    private final String INFO = "Opciones disponibles:\n1->Suma\n2->Resta\n3->Multiplicación\n4->División\n5->Salir";
 
     CalculatorThread(DataInputStream in, DataOutputStream out, Socket client) {
         this.in = in;
@@ -17,49 +21,93 @@ public class CalculatorThread extends Thread{
         this.client = client;
     }
 
-    public void options(String option, double a, double b) {
-        do {
-            switch (option) {
-                case "1":
-                    out.writeUTF(String.valueOf(CalculatorOperations.sum(a,b)));
-                    break;
-                case "2":
-                    out.writeUTF(String.valueOf(CalculatorOperations.sum(a,b)));
-                    System.out.println(CalculatorOperations.subtract(a,b));
-                    break;
-                case "3":
-                    out.writeUTF(String.valueOf(CalculatorOperations.sum(a,b)));
-                    System.out.println(CalculatorOperations.mul(a,b));
-                    break;
-                case "4":
-                    out.writeUTF(String.valueOf(CalculatorOperations.sum(a,b)));
-                    System.out.println(CalculatorOperations.div(a,b));
-                    break;
-                case "salir":
-                    out.writeUTF("Saliendo");
-                default:
-                    out.writeUTF("Opción no válida");
-            }
-        } while (option.equals("salir"));
+    public void options() {
+        try {
+            String option = "";
+            out.writeUTF(INFO);
+            do {
+                option = in.readUTF();
+                System.out.println("Mensaje del cliente: " + option);
+                switch (option.toLowerCase()) {
+                    case "1" -> {
+                        numbers();
+                        if (error) {
+                            controlError();
+                        } else {
+                            out.writeUTF(CalculatorOperations.sum(n1, n2) + "\n" + INFO);
+                        }
+                    }
+                    case "2" -> {
+                        numbers();
+                        if (error) {
+                            controlError();
+                        } else {
+                            out.writeUTF(CalculatorOperations.subtract(n1, n2) + "\n" + INFO);
+                        }
+                    }
+                    case "3" -> {
+                        numbers();
+                        if (error) {
+                            controlError();
+                        } else {
+                            out.writeUTF(CalculatorOperations.mul(n1, n2) + "\n" + INFO);
+                        }
+                    }
+                    case "4" -> {
+                        numbers();
+                        if (error) {
+                            controlError();
+                        } else {
+                            out.writeUTF(CalculatorOperations.div(n1, n2) + "\n" + INFO);
+                        }
+                    }
+                    case "5" -> out.writeUTF("Saliendo.");
+                    default -> out.writeUTF("Opción no válida." + "\n" + INFO);
+                }
+            } while (!option.equals("5"));
+        } catch (IOException e) {
+            error = true;
+            System.out.println("Error: " + e);
+        }
+        stopMethod();
     }
 
     @Override
     public void run() {
+        options();
+    }
+
+    public void numbers() {
         try {
-            String input = in.readUTF();
-            System.out.println(input);
-            while (true) {
-                System.out.println(input);
-                System.out.println("Mensaje del cliente: " + input);
-                out.writeUTF("Introduce un número");
-                double n1 = Double.parseDouble(input);
-                out.writeUTF("Introduce otro número");
-                double n2 = Double.parseDouble(input);
-                System.out.println("Enviando respuesta");
-                options(input, n1, n2);
-            }
+            out.writeUTF("Introduce un número:");
+            n1 = Double.parseDouble(in.readUTF().replaceAll(",", "."));
+            System.out.println(n1);
+            out.writeUTF("Introduce otro número:");
+            n2 = Double.parseDouble(in.readUTF().replaceAll(",", "."));
+            System.out.println(n2);
+        } catch (IOException | NumberFormatException e) {
+            error = true;
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public void stopMethod() {
+        try {
+            in.close();
+            out.close();
+            client.close();
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            error = true;
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public void controlError() {
+        try {
+            out.writeUTF(errorS + "\n" + INFO);
+            error = false;
+        } catch (IOException e) {
+            System.out.println("Error: " + e);
         }
     }
 }

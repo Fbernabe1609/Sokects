@@ -11,49 +11,49 @@ public class Client {
     static DataInputStream in;
     static String response = "";
     static Scanner sc = new Scanner(System.in);
+
     public static void start(String ip, int port) {
         try {
             System.out.println("Cliente encendido.\nConectando con el servidor.");
             client = new Socket(ip, port);
             out = new DataOutputStream(client.getOutputStream());
             in = new DataInputStream(client.getInputStream());
-            do {
-                send();
-            } while (!response.equals("salir"));
-            stop();
+            System.out.println("Conectado con el servidor.");
+            send();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error: " + e);
         }
+        stop();
     }
+
     public static void send() {
         String text = "";
-        try {
-            System.out.println("Introduce un mensaje: ");
-            text = sc.nextLine();
-            System.out.println("Enviando mensaje.");
-            out.writeUTF(text);
-            System.out.println(in.readUTF());
-            text = sc.nextLine();
-            out.writeUTF(text);
-            System.out.println(in.readUTF());
-            text = sc.nextLine();
-            out.writeUTF(text);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        response = text;
+        do {
+            try {
+                System.out.println(in.readUTF());
+                text = sc.nextLine();
+                out.writeUTF(text);
+            } catch (IOException e) {
+                System.out.println("Error: " + e);
+                break;
+            }
+            response = text;
+        } while (!response.equals("5"));
     }
+
     public static void stop() {
         try {
+            System.out.println("Apagando cliente.");
             in.close();
             out.close();
             client.close();
             System.out.println("Cliente apagado.");
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error: " + e);
         }
     }
+
     public static void main(String[] args) {
-        start("127.0.0.1",6900);
+        start("127.0.0.1", 6900);
     }
 }

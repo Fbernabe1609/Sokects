@@ -16,18 +16,19 @@ public class Server {
         System.out.println("Iniciando servidor");
         try {
             server = new ServerSocket(port);
-
-            while (true){
+            while (true) {
                 client = server.accept();
                 out = new DataOutputStream(client.getOutputStream());
                 in = new DataInputStream(client.getInputStream());
-                new Thread(new CalculatorThread(in,out,client)).start();
+                new Thread(new CalculatorThread(in, out, client)).start();
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+            stop();
         }
         System.out.println("Servidor apagado.");
     }
+
     public static void stop() {
         try {
             in.close();

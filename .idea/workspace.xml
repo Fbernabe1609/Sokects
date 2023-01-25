@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4daf04bb-d97a-4ed3-abab-569dbfe3709d" name="Changes" comment="Avance">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/prueba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Product.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/prueba.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/2 DAM/Desktop/CursoJava-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/2 DAM/Desktop/CursoJava-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Controller.Client" />
@@ -89,8 +87,8 @@
       </method>
     </configuration>
     <configuration name="prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="prueba" />
-      <module name="Sokets" />
+      <option name="MAIN_CLASS_NAME" value="org.example.prueba" />
+      <module name="pruebasIsaac" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,7 +117,8 @@
       <workItem from="1674222744328" duration="6225000" />
       <workItem from="1674482713355" duration="5345000" />
       <workItem from="1674500533090" duration="20000" />
-      <workItem from="1674580894644" duration="6405000" />
+      <workItem from="1674580894644" duration="6435000" />
+      <workItem from="1674653495844" duration="10693000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1673978603842</created>
@@ -135,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673986215219</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Avance">
+      <created>1674591559972</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674591559972</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
