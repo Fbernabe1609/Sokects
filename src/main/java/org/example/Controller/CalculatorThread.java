@@ -13,7 +13,7 @@ public class CalculatorThread extends Thread {
     private double n1, n2;
     private boolean error = false;
     private final String errorS = "Ha habido algún problema con los datos introducidos";
-    private final String INFO = "Opciones disponibles:\n1->Suma\n2->Resta\n3->Multiplicación\n4->División\n5->Salir";
+    private final String INFO = "Opciones disponibles:\n1->Suma\n2->Resta\n3->Multiplicación\n4->División\nsalir->Salir";
 
     CalculatorThread(DataInputStream in, DataOutputStream out, Socket client) {
         this.in = in;
@@ -61,10 +61,10 @@ public class CalculatorThread extends Thread {
                             out.writeUTF(CalculatorOperations.div(n1, n2) + "\n" + INFO);
                         }
                     }
-                    case "5" -> out.writeUTF("Saliendo.");
+                    case "salir" -> out.writeUTF("Saliendo.");
                     default -> out.writeUTF("Opción no válida." + "\n" + INFO);
                 }
-            } while (!option.equals("5"));
+            } while (!option.equals("salir"));
         } catch (IOException e) {
             error = true;
             System.out.println("Error: " + e);

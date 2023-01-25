@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4daf04bb-d97a-4ed3-abab-569dbfe3709d" name="Changes" comment="Avance">
-      <change afterPath="$PROJECT_DIR$/Sokets.eml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sokets.userlibraries" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +116,7 @@
       <workItem from="1674482713355" duration="5345000" />
       <workItem from="1674500533090" duration="20000" />
       <workItem from="1674580894644" duration="6435000" />
-      <workItem from="1674653495844" duration="12012000" />
+      <workItem from="1674653495844" duration="13346000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1673978603842</created>
@@ -146,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674665788478</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Avance">
+      <created>1674667186143</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674667186143</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

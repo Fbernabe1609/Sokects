@@ -38,7 +38,7 @@ public class Client {
                 break;
             }
             response = text;
-        } while (!response.equals("5"));
+        } while (!response.equals("salir"));
     }
 
     public static void stop() {
