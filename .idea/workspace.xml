@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4daf04bb-d97a-4ed3-abab-569dbfe3709d" name="Changes" comment="Avance">
+      <change afterPath="$PROJECT_DIR$/src/main/java/certificados/ClientPublicKey.cer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/certificados/ServerPublicKey.cer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/certificados/clientKey.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/certificados/clientTrustedCerts.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/certificados/serverKey3.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/certificados/serverTrustedCerts.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/CalculatorOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/CalculatorThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/2 DAM/Desktop",
+    "last_opened_file_path": "C:/Users/2 DAM/Desktop/Sokects",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,13 +65,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Controller.Client" />
+      <option name="MAIN_CLASS_NAME" value="org.example.controller.Client" />
       <module name="Sokets" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Controller.*" />
+          <option name="PATTERN" value="org.example.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -72,11 +80,11 @@
       </method>
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Controller.Server" />
+      <option name="MAIN_CLASS_NAME" value="org.example.controller.Server" />
       <module name="Sokets" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Controller.*" />
+          <option name="PATTERN" value="org.example.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,6 +125,7 @@
       <workItem from="1674500533090" duration="20000" />
       <workItem from="1674580894644" duration="6435000" />
       <workItem from="1674653495844" duration="13346000" />
+      <workItem from="1676905257948" duration="2664000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1673978603842</created>

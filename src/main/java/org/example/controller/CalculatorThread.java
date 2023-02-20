@@ -1,9 +1,8 @@
-package org.example.Controller;
+package org.example.controller;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.DataOutputStream;
 import java.net.Socket;
 
 public class CalculatorThread extends Thread {
